@@ -52,7 +52,7 @@ namespace GeorgeUtils
 		/// <param name="text">Text.</param>
 		/// <param name="useWordWrap">If set to <c>true</c> use word wrap.</param>
 		/// <param name="lineLength">Line length.</param>
-		public static void Create3DTexT(string text, bool useWordWrap, int lineLength, Vector3 position){
+		public static void Create3DTexT(string text, bool useWordWrap, int lineLength = 12, Vector3 position = default(Vector3)){
 			GameObject go = Instantiate(Resources.Load("3DText")) as GameObject;
 			TextMesh text3d = go.GetComponent<TextMesh> ();
 			if (useWordWrap) {
