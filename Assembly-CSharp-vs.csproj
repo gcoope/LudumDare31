@@ -63,6 +63,10 @@
      <Compile Include="Assets\Scripts\Extension\GeorgeUtils\gPhysics.cs" />
      <Compile Include="Assets\Scripts\Extension\GeorgeUtils\gRaycast.cs" />
      <Compile Include="Assets\Scripts\Extension\GeorgeUtils\gRotation.cs" />
+     <Compile Include="Assets\Scripts\LD31\Events\ScoreEventTypes.cs" />
+     <Compile Include="Assets\Scripts\LD31\Highscores\SendScore.cs" />
+     <Compile Include="Assets\Scripts\LD31\Highscores\SubmitScoreButton.cs" />
+     <Compile Include="Assets\Scripts\LD31\Model\HighscoreModel.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>F:/MyPrograms/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>

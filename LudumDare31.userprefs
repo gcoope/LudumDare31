@@ -1,8 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Extension\GeorgeUtils\gInstantiate.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\LD31\Highscores\SendScore.cs">
     <Files>
-      <File FileName="Assets\Scripts\Extension\GeorgeUtils\gInstantiate.cs" Line="67" Column="2" />
+      <File FileName="Assets\Scripts\LD31\Highscores\SendScore.cs" Line="10" Column="69" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
