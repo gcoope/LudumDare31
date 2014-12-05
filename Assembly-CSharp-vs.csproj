@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\Extension\GeorgeUtils\gRaycast.cs" />
      <Compile Include="Assets\Scripts\Extension\GeorgeUtils\gRotation.cs" />
      <Compile Include="Assets\Scripts\LD31\Events\ScoreEventTypes.cs" />
+     <Compile Include="Assets\Scripts\LD31\Highscores\SaveUsernameButton.cs" />
      <Compile Include="Assets\Scripts\LD31\Highscores\SendScore.cs" />
      <Compile Include="Assets\Scripts\LD31\Highscores\SubmitScoreButton.cs" />
      <Compile Include="Assets\Scripts\LD31\Model\HighscoreModel.cs" />
