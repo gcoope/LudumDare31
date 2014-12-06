@@ -47,6 +47,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\DynamicText\Editor\DynamicTextEditorExtensions.cs" />
+     <None Include="Assets\DOTween\DOTween46.xml" />
+     <None Include="Assets\DOTween\readme.txt" />
+     <None Include="Assets\DOTween\DOTween43.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>F:/MyPrograms/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -58,6 +61,18 @@
  </Reference>
  <Reference Include="DynamicText">
  <HintPath>F:/GitRepos/LudumDare31/Assets/DynamicText/DynamicText.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTweenEditor">
+ <HintPath>F:/GitRepos/LudumDare31/Assets/DOTween/Editor/DOTweenEditor.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween">
+ <HintPath>F:/GitRepos/LudumDare31/Assets/DOTween/DOTween.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween43">
+ <HintPath>F:/GitRepos/LudumDare31/Assets/DOTween/DOTween43.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween46">
+ <HintPath>F:/GitRepos/LudumDare31/Assets/DOTween/DOTween46.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -4,6 +4,8 @@ using System.Collections;
 
 public class NonPhysicsPlayerTester : MonoBehaviour
 {
+	public bool Playing  = false;
+
 	// movement config
 	public float gravity = -25f;
 	public float runSpeed = 8f;
@@ -31,8 +33,18 @@ public class NonPhysicsPlayerTester : MonoBehaviour
 		_controller.onControllerCollidedEvent += onControllerCollider;
 		_controller.onTriggerEnterEvent += onTriggerEnterEvent;
 		_controller.onTriggerExitEvent += onTriggerExitEvent;
+
+		// Events
+		gameObject.AddGlobalEventListener(PlayerEvents.StartGame, StartGame);
 	}
 
+	void StartGame(EventObject evt){
+		if(!Playing) Playing = true;
+	}
+
+	void OnDestroy() {
+		gameObject.RemoveGlobalEventListener(PlayerEvents.StartGame, StartGame);
+	}
 
 	#region Event Listeners
 
@@ -64,55 +76,57 @@ public class NonPhysicsPlayerTester : MonoBehaviour
 	// the Update loop contains a very simple example of moving the character around and controlling the animation
 	void Update()
 	{
-		// grab our current _velocity to use as a base for all calculations
-		_velocity = _controller.velocity;
-
-		if( _controller.isGrounded )
-			_velocity.y = 0;
-
-		if( Input.GetKey( KeyCode.RightArrow ) )
-		{
-			normalizedHorizontalSpeed = 1;
-			if( transform.localScale.x < 0f )
-				transform.localScale = new Vector3( -transform.localScale.x, transform.localScale.y, transform.localScale.z );
+		if(Playing) {
+			// grab our current _velocity to use as a base for all calculations
+			_velocity = _controller.velocity;
 
 			if( _controller.isGrounded )
-				_animator.Play( Animator.StringToHash( "Run" ) );
-		}
-		else if( Input.GetKey( KeyCode.LeftArrow ) )
-		{
-			normalizedHorizontalSpeed = -1;
-			if( transform.localScale.x > 0f )
-				transform.localScale = new Vector3( -transform.localScale.x, transform.localScale.y, transform.localScale.z );
+				_velocity.y = 0;
 
-			if( _controller.isGrounded )
-				_animator.Play( Animator.StringToHash( "Run" ) );
-		}
-		else
-		{
-			normalizedHorizontalSpeed = 0;
+			if( Input.GetKey( KeyCode.RightArrow ) )
+			{
+				normalizedHorizontalSpeed = 1;
+				if( transform.localScale.x < 0f )
+					transform.localScale = new Vector3( -transform.localScale.x, transform.localScale.y, transform.localScale.z );
 
-			if( _controller.isGrounded )
-				_animator.Play( Animator.StringToHash( "Idle" ) );
-		}
+				if( _controller.isGrounded )
+					_animator.Play( Animator.StringToHash( "Run" ) );
+			}
+			else if( Input.GetKey( KeyCode.LeftArrow ) )
+			{
+				normalizedHorizontalSpeed = -1;
+				if( transform.localScale.x > 0f )
+					transform.localScale = new Vector3( -transform.localScale.x, transform.localScale.y, transform.localScale.z );
+
+				if( _controller.isGrounded )
+					_animator.Play( Animator.StringToHash( "Run" ) );
+			}
+			else
+			{
+				normalizedHorizontalSpeed = 0;
+
+				if( _controller.isGrounded )
+					_animator.Play( Animator.StringToHash( "Idle" ) );
+			}
 
 
-		// we can only jump whilst grounded
-		if( _controller.isGrounded && Input.GetKeyDown( KeyCode.UpArrow ) )
-		{
-			_velocity.y = Mathf.Sqrt( 2f * jumpHeight * -gravity );
-			_animator.Play( Animator.StringToHash( "Jump" ) );
-		}
+			// we can only jump whilst grounded
+			if( _controller.isGrounded && Input.GetKeyDown( KeyCode.UpArrow ) )
+			{
+				_velocity.y = Mathf.Sqrt( 2f * jumpHeight * -gravity );
+				_animator.Play( Animator.StringToHash( "Jump" ) );
+			}
 
 
-		// apply horizontal speed smoothing it
-		var smoothedMovementFactor = _controller.isGrounded ? groundDamping : inAirDamping; // how fast do we change direction?
-		_velocity.x = Mathf.Lerp( _velocity.x, normalizedHorizontalSpeed * runSpeed, Time.deltaTime * smoothedMovementFactor );
+			// apply horizontal speed smoothing it
+			var smoothedMovementFactor = _controller.isGrounded ? groundDamping : inAirDamping; // how fast do we change direction?
+			_velocity.x = Mathf.Lerp( _velocity.x, normalizedHorizontalSpeed * runSpeed, Time.deltaTime * smoothedMovementFactor );
 
-		// apply gravity before moving
-		_velocity.y += gravity * Time.deltaTime;
+			// apply gravity before moving
+			_velocity.y += gravity * Time.deltaTime;
 
 		_controller.move( _velocity * Time.deltaTime );
+		}
 	}
 
 }
