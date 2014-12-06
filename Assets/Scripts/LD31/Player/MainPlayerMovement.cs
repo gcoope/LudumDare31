@@ -2,7 +2,7 @@
 using System.Collections;
 
 
-public class NonPhysicsPlayerTester : MonoBehaviour
+public class MainPlayerMovement : MonoBehaviour
 {
 	public bool Playing  = false;
 
@@ -35,7 +35,7 @@ public class NonPhysicsPlayerTester : MonoBehaviour
 		_controller.onTriggerExitEvent += onTriggerExitEvent;
 
 		// Events
-		gameObject.AddGlobalEventListener(PlayerEvents.StartGame, StartGame);
+		gameObject.AddGlobalEventListener(GameEvents.StartGame, StartGame);
 	}
 
 	void StartGame(EventObject evt){
@@ -43,7 +43,7 @@ public class NonPhysicsPlayerTester : MonoBehaviour
 	}
 
 	void OnDestroy() {
-		gameObject.RemoveGlobalEventListener(PlayerEvents.StartGame, StartGame);
+		gameObject.RemoveGlobalEventListener(GameEvents.StartGame, StartGame);
 	}
 
 	#region Event Listeners

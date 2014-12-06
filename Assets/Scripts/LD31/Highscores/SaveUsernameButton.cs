@@ -11,6 +11,7 @@ public class SaveUsernameButton : MonoBehaviour {
 	public GameObject EventSystemManager;
 	public GameObject EnterUsernameText;
 	public GameObject gameNameText;
+	public GameObject arrowImage;
 
 	private Image buttonImage;
 	public GameObject buttonTextObj;
@@ -31,12 +32,13 @@ public class SaveUsernameButton : MonoBehaviour {
 			if(inputField.text != "" && inputField.text.Length > 0 && !inputField.text.Contains("\n")){
 				HighscoreModel.Username = inputField.text;
 				Debug.Log("[SaveUsernameButton] Set username to: " + inputField.text + ", starting game!");
-				gameObject.DispatchGlobalEvent(PlayerEvents.StartGame);
+				gameObject.DispatchGlobalEvent(GameEvents.StartGame);
 				EnterUsernameText.SetActive(false);
 				inputField.gameObject.transform.DOLocalMoveX(-430f, 0.5f, false);
 				buttonTextObj.transform.DOLocalMoveX(430f, 0.5f, false);
+				arrowImage.transform.DOLocalMoveY(-350f, 0.5f, false);
 				transform.DOLocalMoveX(430f, 0.5f, false).OnComplete(OnTweenEnd);
-				gameNameText.transform.DOLocalMoveY(6f, 0.5f, false);
+				gameNameText.transform.DOLocalMoveY(12f, 0.5f, false);
 			} else {
 				errorText.text = "Please enter a name!";
 				inputField.text = "";
