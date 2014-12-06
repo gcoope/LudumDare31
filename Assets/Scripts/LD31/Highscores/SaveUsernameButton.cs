@@ -17,7 +17,8 @@ public class SaveUsernameButton : MonoBehaviour {
 		if(inputField != null){
 			if(inputField.text != ""){
 				HighscoreModel.Username = inputField.text;
-				Debug.Log("Set username to: " + inputField.text + ", loading next level!");
+				Debug.Log("[SaveUsernameButton] Set username to: " + inputField.text + ", loading next level!");
+				Application.LoadLevel(Application.loadedLevel + 1);
 			} else {
 				errorText.text = "Please enter a name!";
 			}

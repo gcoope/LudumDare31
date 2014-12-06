@@ -5,11 +5,11 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{C91849E4-3D95-D3E1-78E7-A3364DD0D8B4}</ProjectGuid>
+	<ProjectGuid>{7FC970E5-1C57-E6BD-D047-D2FF7F4A824E}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
-	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<AssemblyName>Assembly-CSharp-Editor</AssemblyName>
 	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
 	<FileAlignment>512</FileAlignment>
 	<BaseDirectory>Assets</BaseDirectory>
@@ -46,37 +46,23 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Extension\EventDispatcher\EventDispatcher.cs" />
-     <Compile Include="Assets\Scripts\Extension\EventDispatcher\EventObject.cs" />
-     <Compile Include="Assets\Scripts\Extension\EventDispatcher\Extensions\EventExtension.cs" />
-     <Compile Include="Assets\Scripts\Extension\EventDispatcher\GlobalDispatcher.cs" />
-     <Compile Include="Assets\Scripts\Extension\EventDispatcher\WeakDictionary\WeakDictionary.cs" />
-     <Compile Include="Assets\Scripts\Extension\GeorgeUtils\gCamera.cs" />
-     <Compile Include="Assets\Scripts\Extension\GeorgeUtils\gDebug.cs" />
-     <Compile Include="Assets\Scripts\Extension\GeorgeUtils\gEffects.cs" />
-     <Compile Include="Assets\Scripts\Extension\GeorgeUtils\gGUI.cs" />
-     <Compile Include="Assets\Scripts\Extension\GeorgeUtils\gGameObjects.cs" />
-     <Compile Include="Assets\Scripts\Extension\GeorgeUtils\gInput.cs" />
-     <Compile Include="Assets\Scripts\Extension\GeorgeUtils\gInstantiate.cs" />
-     <Compile Include="Assets\Scripts\Extension\GeorgeUtils\gMaterial.cs" />
-     <Compile Include="Assets\Scripts\Extension\GeorgeUtils\gMaths.cs" />
-     <Compile Include="Assets\Scripts\Extension\GeorgeUtils\gPhysics.cs" />
-     <Compile Include="Assets\Scripts\Extension\GeorgeUtils\gRaycast.cs" />
-     <Compile Include="Assets\Scripts\Extension\GeorgeUtils\gRotation.cs" />
-     <Compile Include="Assets\Scripts\LD31\Events\ScoreEventTypes.cs" />
-     <Compile Include="Assets\Scripts\LD31\Highscores\SaveUsernameButton.cs" />
-     <Compile Include="Assets\Scripts\LD31\Highscores\SendScore.cs" />
-     <Compile Include="Assets\Scripts\LD31\Highscores\SubmitScoreButton.cs" />
-     <Compile Include="Assets\Scripts\LD31\Model\HighscoreModel.cs" />
-     <Compile Include="Assets\Scripts\LD31\Player\CC2DTriggerHelper.cs" />
-     <Compile Include="Assets\Scripts\LD31\Player\CharacterController2D.cs" />
-     <Compile Include="Assets\Scripts\LD31\Player\NonPhysicsPlayerTester.cs" />
+     <Compile Include="Assets\DynamicText\Editor\DynamicTextEditorExtensions.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>F:/MyPrograms/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.UI">
+ <HintPath>F:/MyPrograms/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/Editor/UnityEditor.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Graphs">
+ <HintPath>F:/MyPrograms/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>
  <Reference Include="DynamicText">
  <HintPath>F:/GitRepos/LudumDare31/Assets/DynamicText/DynamicText.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp.csproj">
+      <Project>{C91849E4-3D95-D3E1-78E7-A3364DD0D8B4}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

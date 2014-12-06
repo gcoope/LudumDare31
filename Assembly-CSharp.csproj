@@ -68,8 +68,14 @@
      <Compile Include="Assets\Scripts\LD31\Highscores\SendScore.cs" />
      <Compile Include="Assets\Scripts\LD31\Highscores\SubmitScoreButton.cs" />
      <Compile Include="Assets\Scripts\LD31\Model\HighscoreModel.cs" />
+     <Compile Include="Assets\Scripts\LD31\Player\CC2DTriggerHelper.cs" />
+     <Compile Include="Assets\Scripts\LD31\Player\CharacterController2D.cs" />
+     <Compile Include="Assets\Scripts\LD31\Player\NonPhysicsPlayerTester.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>F:/MyPrograms/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="DynamicText">
+ <HintPath>F:/GitRepos/LudumDare31/Assets/DynamicText/DynamicText.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

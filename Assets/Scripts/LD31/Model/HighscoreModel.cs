@@ -8,8 +8,6 @@ public class HighscoreModel : MonoBehaviour{
 
 	void Start() {
 		DontDestroyOnLoad(this);
-		Username = "";
-		Score = 0;
 	}
 
 }
