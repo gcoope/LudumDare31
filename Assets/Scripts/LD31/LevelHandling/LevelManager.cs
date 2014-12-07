@@ -33,16 +33,22 @@ public class LevelManager : MonoBehaviour {
 		Levels[lvlIndex].SetActive(true);
 	}
 
+	public void ReloadLevel(EventObject evt){
+		//
+	}
+
 
 	void Awake(){
 		gameObject.AddGlobalEventListener(GameEvents.NextLevel, NextLevel);
 		gameObject.AddGlobalEventListener(GameEvents.ReloadGame, ReloadGame);
 		gameObject.AddGlobalEventListener(GameEvents.StartGame, StartGame);
+		gameObject.AddGlobalEventListener(GameEvents.ReloadLevel, ReloadLevel);
 	}
 	
 	void OnDestroy() {
 		gameObject.RemoveGlobalEventListener(GameEvents.NextLevel, NextLevel);
 		gameObject.RemoveGlobalEventListener(GameEvents.ReloadGame, ReloadGame);
 		gameObject.RemoveGlobalEventListener(GameEvents.StartGame, StartGame);
+		gameObject.RemoveGlobalEventListener(GameEvents.ReloadLevel, ReloadLevel);
 	}
 }

@@ -21,8 +21,11 @@ public class MainPlayerMovement : MonoBehaviour
 	private RaycastHit2D _lastControllerColliderHit;
 	private Vector3 _velocity;
 
+	private Vector3 startPosition;
 
-
+	void Start(){
+		startPosition = transform.position;
+	}
 
 	void Awake()
 	{
@@ -36,14 +39,35 @@ public class MainPlayerMovement : MonoBehaviour
 
 		// Events
 		gameObject.AddGlobalEventListener(GameEvents.StartGame, StartGame);
+		gameObject.AddGlobalEventListener(GameEvents.PauseGame, PauseGame);
+		gameObject.AddGlobalEventListener(GameEvents.GameOver, PauseGame);
+		gameObject.AddGlobalEventListener(GameEvents.ReloadLevel, ResetPosition);
+		gameObject.AddGlobalEventListener(GameEvents.ReloadGame, ResetPosition);
+	}
+
+	void ResetPosition(EventObject evt){
+		transform.position = startPosition;
+		StartGame();
 	}
 
 	void StartGame(EventObject evt){
+		StartGame();
+	}
+
+	void StartGame(){
 		if(!Playing) Playing = true;
+		
+	}
+
+	void PauseGame(EventObject evt){
+		if(Playing) Playing = false;
+		_animator.Play( Animator.StringToHash( "Idle" ) );
 	}
 
 	void OnDestroy() {
 		gameObject.RemoveGlobalEventListener(GameEvents.StartGame, StartGame);
+		gameObject.RemoveGlobalEventListener(GameEvents.PauseGame, PauseGame);
+		gameObject.RemoveGlobalEventListener(GameEvents.GameOver, PauseGame);
 	}
 
 	#region Event Listeners

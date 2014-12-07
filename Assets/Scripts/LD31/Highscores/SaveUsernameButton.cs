@@ -6,8 +6,10 @@ using DG.Tweening;
 
 public class SaveUsernameButton : MonoBehaviour {
 
-	public InputField inputField;
-	public Text errorText;
+	private InputField inputField;
+	private Text inputFieldText;
+	public GameObject inputFieldObject;
+	public GameObject inputFieldTextObject;
 	public GameObject EventSystemManager;
 	public GameObject EnterUsernameText;
 	public GameObject gameNameText;
@@ -18,20 +20,19 @@ public class SaveUsernameButton : MonoBehaviour {
 	private bool EnterPressed = false;
 
 	public void Start(){
-		if(errorText != null) {
-			errorText.text = "";
-		}
 
 		buttonImage = GetComponent<Image>();
+		inputField = inputFieldObject.GetComponent<InputField>();
+		inputFieldText = inputFieldObject.GetComponent<Text>();
 
 		DOTween.Init();
 	}
 
 	public void Submit() {
+		Debug.Log("Submit pressed?");
 		if(inputField != null){
-			if(inputField.text != "" && inputField.text.Length > 0 && !inputField.text.Contains("\n")){
+			if(inputField.text != "" && inputField.textComponent.text.Length > 0 && !inputField.text.Contains("\n")){
 				HighscoreModel.Username = inputField.text;
-				Debug.Log("[SaveUsernameButton] Set username to: " + inputField.text + ", starting game!");
 				gameObject.DispatchGlobalEvent(GameEvents.StartGame);
 				EnterUsernameText.SetActive(false);
 				inputField.gameObject.transform.DOLocalMoveX(-430f, 0.5f, false);
@@ -40,9 +41,8 @@ public class SaveUsernameButton : MonoBehaviour {
 				transform.DOLocalMoveX(430f, 0.5f, false).OnComplete(OnTweenEnd);
 				gameNameText.transform.DOLocalMoveY(12f, 0.5f, false);
 			} else {
-				errorText.text = "Please enter a name!";
 				inputField.text = "";
-				inputField.ActivateInputField();
+				inputField.textComponent.text = "";
 				EnterPressed = false;
 			}
 		}
@@ -53,7 +53,7 @@ public class SaveUsernameButton : MonoBehaviour {
 	}
 
 	void Update() {
-		if(Input.GetKeyDown(KeyCode.Return)){
+		if(Input.GetKeyUp(KeyCode.Return)){
 			if(!EnterPressed){ 
 				EnterPressed = true;
 				Submit();
@@ -63,6 +63,7 @@ public class SaveUsernameButton : MonoBehaviour {
 
 	public void MouseHover(){
 		if(buttonImage !=null) buttonImage.color = Color.gray;
+		else Debug.Log("buttonImage is null?");
 	}
 
 	public void MouseExit(){

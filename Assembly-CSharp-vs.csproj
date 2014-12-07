@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_4_6_0;UNITY_4_6;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_6_0;UNITY_4_6;UNITY_WEBPLAYER;WEBPLUG;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;Image</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -65,26 +65,30 @@
      <Compile Include="Assets\Scripts\Extension\GeorgeUtils\gRotation.cs" />
      <Compile Include="Assets\Scripts\LD31\Events\GameEvents.cs" />
      <Compile Include="Assets\Scripts\LD31\Events\PlayerEvents.cs" />
-     <Compile Include="Assets\Scripts\LD31\Events\ScoreEventTypes.cs" />
+     <Compile Include="Assets\Scripts\LD31\Events\ScoreEvents.cs" />
      <Compile Include="Assets\Scripts\LD31\Events\UIEvents.cs" />
      <Compile Include="Assets\Scripts\LD31\Highscores\SaveUsernameButton.cs" />
      <Compile Include="Assets\Scripts\LD31\Highscores\SendScore.cs" />
      <Compile Include="Assets\Scripts\LD31\Highscores\SubmitScoreButton.cs" />
-     <Compile Include="Assets\Scripts\LD31\LevelManager.cs" />
+     <Compile Include="Assets\Scripts\LD31\LevelHandling\LevelManager.cs" />
+     <Compile Include="Assets\Scripts\LD31\LevelHandling\NextLevelButton.cs" />
+     <Compile Include="Assets\Scripts\LD31\LevelHandling\ReloadLevelButton.cs" />
      <Compile Include="Assets\Scripts\LD31\Model\HighscoreModel.cs" />
      <Compile Include="Assets\Scripts\LD31\Player\CC2DTriggerHelper.cs" />
      <Compile Include="Assets\Scripts\LD31\Player\CharacterController2D.cs" />
      <Compile Include="Assets\Scripts\LD31\Player\MainPlayerMovement.cs" />
-     <Compile Include="Assets\Scripts\LD31\Timer\GameTimer.cs" />
+     <Compile Include="Assets\Scripts\LD31\Scoring\CollectablesCounter.cs" />
+     <Compile Include="Assets\Scripts\LD31\Scoring\CrystalPickup.cs" />
+     <Compile Include="Assets\Scripts\LD31\Scoring\GameOverScoreText.cs" />
+     <Compile Include="Assets\Scripts\LD31\Scoring\GameTimer.cs" />
      <Compile Include="Assets\Scripts\LD31\UIEffects\BlackBannerAnimateIn.cs" />
+     <Compile Include="Assets\Scripts\LD31\UIEffects\GameOverBannerAnimate.cs" />
+     <Compile Include="Assets\Scripts\LD31\UIEffects\ShowHideGameOverUI.cs" />
      <None Include="Assets\DOTween\DOTween46.xml" />
      <None Include="Assets\DOTween\readme.txt" />
      <None Include="Assets\DOTween\DOTween43.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>F:/MyPrograms/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
- </Reference>
- <Reference Include="DynamicText">
- <HintPath>F:/GitRepos/LudumDare31/Assets/DynamicText/DynamicText.dll</HintPath>
  </Reference>
  <Reference Include="DOTween">
  <HintPath>F:/GitRepos/LudumDare31/Assets/DOTween/DOTween.dll</HintPath>
@@ -94,6 +98,9 @@
  </Reference>
  <Reference Include="DOTween46">
  <HintPath>F:/GitRepos/LudumDare31/Assets/DOTween/DOTween46.dll</HintPath>
+ </Reference>
+ <Reference Include="DynamicText">
+ <HintPath>F:/GitRepos/LudumDare31/Assets/DynamicText/DynamicText.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

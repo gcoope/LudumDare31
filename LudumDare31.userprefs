@@ -1,17 +1,15 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\LD31\Highscores\SaveUsernameButton.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\LD31\Scoring\GameTimer.cs">
     <Files>
-      <File FileName="Assets\Scripts\LD31\UIEffects\BlackBannerAnimateIn.cs" Line="30" Column="3" />
-      <File FileName="Assets\Scripts\LD31\Highscores\SaveUsernameButton.cs" Line="39" Column="43" />
-      <File FileName="Assets\Scripts\LD31\Highscores\SendScore.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\LD31\Model\HighscoreModel.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\LD31\Player\MainPlayerMovement.cs" Line="117" Column="45" />
-      <File FileName="Assets\Scripts\LD31\Events\PlayerEvents.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\LD31\Events\ScoreEventTypes.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\LD31\LevelManager.cs" Line="31" Column="41" />
-      <File FileName="Assets\Scripts\LD31\Events\GameEvents.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\LD31\Events\UIEvents.cs" Line="5" Column="57" />
+      <File FileName="Assets\Scripts\LD31\Scoring\CollectablesCounter.cs" Line="20" Column="76" />
+      <File FileName="Assets\Scripts\LD31\Scoring\GameTimer.cs" Line="63" Column="57" />
+      <File FileName="Assets\Scripts\LD31\UIEffects\BlackBannerAnimateIn.cs" Line="11" Column="2" />
+      <File FileName="Assets\Scripts\LD31\UIEffects\GameOverBannerAnimate.cs" Line="39" Column="28" />
+      <File FileName="Assets\Scripts\LD31\Scoring\GameOverScoreText.cs" Line="36" Column="23" />
+      <File FileName="Assets\Scripts\LD31\LevelHandling\LevelManager.cs" Line="37" Column="5" />
+      <File FileName="Assets\Scripts\LD31\Player\MainPlayerMovement.cs" Line="50" Column="15" />
+      <File FileName="Assets\Scripts\LD31\Highscores\SaveUsernameButton.cs" Line="31" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
