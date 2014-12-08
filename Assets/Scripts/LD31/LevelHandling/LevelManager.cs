@@ -7,20 +7,18 @@ public class LevelManager : MonoBehaviour {
 	public GameObject[] Levels;
 	public int lvlIndex = 0;
 
-	void Start(){
-	}
-	
 	public void NextLevel(EventObject evt){
-		if(Levels != null) {
-			if(lvlIndex + 1 < Levels.Length) {
-				Levels[lvlIndex].SetActive(false);
-				Levels[lvlIndex + 1].SetActive(true);
-				lvlIndex++;
-			} else {
-				Levels[lvlIndex].SetActive(false);
-				lvlIndex = 0;
-				Levels[0].SetActive(true);
-			}
+		if(lvlIndex + 1 < Levels.Length) {
+			Destroy(Levels[lvlIndex]);
+			Levels[lvlIndex + 1] = Instantiate(Resources.Load("Prefabs/Levels/Level" + (lvlIndex + 1).ToString())) as GameObject;
+			lvlIndex++;
+			HighscoreModel.CurrentLevelIndex = lvlIndex;			
+		} else {
+			Debug.Log("No more levels!"); // TODO Handle me
+			Destroy(Levels[lvlIndex]);
+			lvlIndex = 0;
+			Levels[lvlIndex] = Instantiate(Resources.Load("Prefabs/Levels/Level" + (lvlIndex + 1).ToString())) as GameObject;
+			HighscoreModel.CurrentLevelIndex = lvlIndex;			
 		}
 	}
 
@@ -29,12 +27,15 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	public void StartGame(EventObject evt){
+		HighscoreModel.CurrentLevelIndex = lvlIndex;
 		lvlIndex = 0;
 		Levels[lvlIndex].SetActive(true);
 	}
 
 	public void ReloadLevel(EventObject evt){
-		//
+		Destroy(Levels[lvlIndex]);
+		Levels[lvlIndex] = Instantiate(Resources.Load("Prefabs/Levels/Level" + (lvlIndex + 1).ToString())) as GameObject;
+		HighscoreModel.CurrentLevelIndex = lvlIndex;
 	}
 
 

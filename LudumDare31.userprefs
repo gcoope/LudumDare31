@@ -1,15 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\LD31\Scoring\GameTimer.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\LD31\Model\HighscoreModel.cs">
     <Files>
-      <File FileName="Assets\Scripts\LD31\Scoring\CollectablesCounter.cs" Line="20" Column="76" />
-      <File FileName="Assets\Scripts\LD31\Scoring\GameTimer.cs" Line="63" Column="57" />
-      <File FileName="Assets\Scripts\LD31\UIEffects\BlackBannerAnimateIn.cs" Line="11" Column="2" />
-      <File FileName="Assets\Scripts\LD31\UIEffects\GameOverBannerAnimate.cs" Line="39" Column="28" />
-      <File FileName="Assets\Scripts\LD31\Scoring\GameOverScoreText.cs" Line="36" Column="23" />
-      <File FileName="Assets\Scripts\LD31\LevelHandling\LevelManager.cs" Line="37" Column="5" />
-      <File FileName="Assets\Scripts\LD31\Player\MainPlayerMovement.cs" Line="50" Column="15" />
-      <File FileName="Assets\Scripts\LD31\Highscores\SaveUsernameButton.cs" Line="31" Column="1" />
+      <File FileName="Assets\Scripts\LD31\LevelHandling\ReloadLevelButton.cs" Line="7" Column="34" />
+      <File FileName="Assets\Scripts\LD31\LevelHandling\LevelManager.cs" Line="21" Column="48" />
+      <File FileName="Assets\Scripts\LD31\Scoring\GameOverScoreText.cs" Line="37" Column="93" />
+      <File FileName="Assets\Scripts\LD31\UIEffects\GameOverBannerAnimate.cs" Line="22" Column="60" />
+      <File FileName="Assets\Scripts\LD31\Player\MainPlayerMovement.cs" Line="74" Column="39" />
+      <File FileName="Assets\Scripts\LD31\Model\HighscoreModel.cs" Line="10" Column="21" />
+      <File FileName="Assets\Scripts\LD31\Scoring\GameTimer.cs" Line="43" Column="29" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

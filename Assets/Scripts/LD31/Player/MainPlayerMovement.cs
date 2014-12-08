@@ -42,6 +42,7 @@ public class MainPlayerMovement : MonoBehaviour
 		gameObject.AddGlobalEventListener(GameEvents.PauseGame, PauseGame);
 		gameObject.AddGlobalEventListener(GameEvents.GameOver, PauseGame);
 		gameObject.AddGlobalEventListener(GameEvents.ReloadLevel, ResetPosition);
+		gameObject.AddGlobalEventListener(GameEvents.NextLevel, ResetPosition);
 		gameObject.AddGlobalEventListener(GameEvents.ReloadGame, ResetPosition);
 	}
 
@@ -68,6 +69,9 @@ public class MainPlayerMovement : MonoBehaviour
 		gameObject.RemoveGlobalEventListener(GameEvents.StartGame, StartGame);
 		gameObject.RemoveGlobalEventListener(GameEvents.PauseGame, PauseGame);
 		gameObject.RemoveGlobalEventListener(GameEvents.GameOver, PauseGame);
+		gameObject.RemoveGlobalEventListener(GameEvents.ReloadLevel, ResetPosition);
+		gameObject.RemoveGlobalEventListener(GameEvents.NextLevel, ResetPosition);
+		gameObject.RemoveGlobalEventListener(GameEvents.ReloadGame, ResetPosition);
 	}
 
 	#region Event Listeners

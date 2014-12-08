@@ -13,11 +13,13 @@ public class CollectablesCounter : MonoBehaviour {
 	void Awake(){
 		gameObject.AddGlobalEventListener(ScoreEvents.PickedUpCollectable, AddToCounter);
 		gameObject.AddGlobalEventListener(GameEvents.ReloadLevel, ResetCounter);
+		gameObject.AddGlobalEventListener(GameEvents.NextLevel, ResetCounter);
 	}
 
 	void OnDestroy(){
 		gameObject.RemoveGlobalEventListener(ScoreEvents.PickedUpCollectable, AddToCounter);
 		gameObject.RemoveGlobalEventListener(GameEvents.ReloadLevel, ResetCounter);
+		gameObject.RemoveGlobalEventListener(GameEvents.NextLevel, ResetCounter);
 	}
 
 	void Start () {

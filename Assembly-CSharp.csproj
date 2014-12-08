@@ -79,6 +79,7 @@
      <Compile Include="Assets\Scripts\LD31\Player\MainPlayerMovement.cs" />
      <Compile Include="Assets\Scripts\LD31\Scoring\CollectablesCounter.cs" />
      <Compile Include="Assets\Scripts\LD31\Scoring\CrystalPickup.cs" />
+     <Compile Include="Assets\Scripts\LD31\Scoring\GameOverHighscoreText.cs" />
      <Compile Include="Assets\Scripts\LD31\Scoring\GameOverScoreText.cs" />
      <Compile Include="Assets\Scripts\LD31\Scoring\GameTimer.cs" />
      <Compile Include="Assets\Scripts\LD31\UIEffects\BlackBannerAnimateIn.cs" />

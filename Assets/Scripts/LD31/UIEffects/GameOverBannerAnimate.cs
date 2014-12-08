@@ -12,12 +12,14 @@ public class GameOverBannerAnimate : MonoBehaviour {
 	void Awake() {
 		gameObject.AddGlobalEventListener(GameEvents.GameOver, BeginAnimation);
 		gameObject.AddGlobalEventListener(GameEvents.ReloadLevel, HideMe);
+		gameObject.AddGlobalEventListener(GameEvents.NextLevel, HideMe);
 		GetComponent<Image>().enabled = false;
 	}
 	
 	void OnDestroy() {
 		gameObject.RemoveGlobalEventListener(GameEvents.GameOver, BeginAnimation);		
 		gameObject.RemoveGlobalEventListener(GameEvents.ReloadLevel, HideMe);		
+		gameObject.RemoveGlobalEventListener(GameEvents.NextLevel, HideMe);		
 	}
 	
 	void BeginAnimation(EventObject evt) {

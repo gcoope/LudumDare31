@@ -16,6 +16,7 @@ public class GameTimer : MonoBehaviour {
 		gameObject.AddGlobalEventListener(GameEvents.PauseGame, PauseTimer);
 		gameObject.AddGlobalEventListener(GameEvents.GameOver, GameOver);
 		gameObject.AddGlobalEventListener(GameEvents.ReloadLevel, ResetTime);
+		gameObject.AddGlobalEventListener(GameEvents.NextLevel, ResetTime);
 	}
 
 	void OnDestroy(){
@@ -23,6 +24,7 @@ public class GameTimer : MonoBehaviour {
 		gameObject.RemoveGlobalEventListener(GameEvents.PauseGame, PauseTimer);
 		gameObject.RemoveGlobalEventListener(GameEvents.GameOver, GameOver);
 		gameObject.RemoveGlobalEventListener(GameEvents.ReloadLevel, ResetTime);
+		gameObject.RemoveGlobalEventListener(GameEvents.NextLevel, ResetTime);
 	}
 
 	void Start(){
@@ -40,11 +42,11 @@ public class GameTimer : MonoBehaviour {
 
 	void GameOver(EventObject evt){
 		ticking = false;
-		HighscoreModel.Level1Score = timer;		
+		HighscoreModel.SetHighscore(timer);		
 	}
 
 	void ResetTime(EventObject evt){
-		HighscoreModel.Level1Score = 0;
+		HighscoreModel.SetHighscore(0);
 		timer = duration;
 		ticking = true;
 	}
@@ -59,18 +61,10 @@ public class GameTimer : MonoBehaviour {
 			if(timer <= 0) {
 				ticking = false;
 				timerText.text = "0.00";
-				HighscoreModel.Level1Score = timer;
+				HighscoreModel.SetHighscore(timer);
 				gameObject.DispatchGlobalEvent(GameEvents.GameOver);
 			}
 		}
-
-		/*
-		if(Input.GetKeyDown(KeyCode.Space)) {
-			ticking = !ticking;
-			if(!ticking) gameObject.DispatchGlobalEvent(GameEvents.PauseGame);
-			else gameObject.DispatchGlobalEvent(GameEvents.StartGame);
-		}
-		*/
 	}
 
 	void FixedUpdate(){
